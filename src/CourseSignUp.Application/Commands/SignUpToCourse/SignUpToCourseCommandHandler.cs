@@ -37,8 +37,6 @@ namespace CourseSignUp.Application.Commands.SignUpToCourse
                 DateOfBirth = request.Student.DateOfBirth
             };
 
-            await _courseService.SignUpAsync(request.CourseId, student);
-
             BackgroundJob.Enqueue<ICourseService>(x => x.SignUpAsync(request.CourseId, student));
 
             return new SignUpToCourseCommandResponse

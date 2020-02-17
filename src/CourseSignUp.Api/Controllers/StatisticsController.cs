@@ -20,7 +20,7 @@ namespace CourseSignUp.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet(Name = "GetCoursesStatistics")]
+        [HttpGet(Name = "GetStatistics")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CoursesStatisticsRequestResponse>> GetAsync()
 
@@ -28,7 +28,7 @@ namespace CourseSignUp.Api.Controllers
             return Ok(await _mediator.Send(new CoursesStatisticsRequest()));
         }
 
-        [HttpGet("{id:int}", Name = "GetCoursesStatisticsById")]
+        [HttpGet("{id:int}", Name = "GetStatisticsById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<CourseStatisticsRequestResponse>> GetByIdAsync(int id)

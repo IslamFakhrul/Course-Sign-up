@@ -26,16 +26,16 @@ namespace CourseSignUp.Domain.Services
         public async Task<IEnumerable<Course>> GetAllAsync()
         {
             return await _courseSignUpDbContext.Courses
-                .Include(i => i.Lecturer)
-                .Include(i => i.CourseStudent)
+                .Include(x => x.Lecturer)
+                .Include(x => x.CourseStudent)
                 .ToListAsync();
         }
 
         public async Task<Course> GetByIdAsync(int id)
         {
             return await _courseSignUpDbContext.Courses
-                .Include(i => i.Lecturer)
-                .Include(i => i.CourseStudent)
+                .Include(x => x.Lecturer)
+                .Include(x => x.CourseStudent)
                 .FirstOrDefaultAsync(i => i.Id == id);
         }
 

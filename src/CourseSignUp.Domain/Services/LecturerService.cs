@@ -8,7 +8,8 @@ namespace CourseSignUp.Domain.Services
 {
     public class LecturerService : ServiceBase<Lecturer>, ILecturerService
     {
-        public LecturerService(CourseSignUpDbContext courseSignUpDbContext) : base(courseSignUpDbContext)
+        public LecturerService(CourseSignUpDbContext courseSignUpDbContext) 
+            : base(courseSignUpDbContext)
         {
         }
     }

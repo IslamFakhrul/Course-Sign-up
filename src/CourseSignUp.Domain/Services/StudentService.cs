@@ -10,7 +10,9 @@ namespace CourseSignUp.Domain.Services
     public class StudentService : ServiceBase<Student>, IStudentService
     {
         private readonly CourseSignUpDbContext _courseSignUpDbContext;
-        public StudentService(CourseSignUpDbContext courseSignUpDbContext) : base(courseSignUpDbContext)
+
+        public StudentService(CourseSignUpDbContext courseSignUpDbContext) 
+            : base(courseSignUpDbContext)
         {
             _courseSignUpDbContext = courseSignUpDbContext;
         }
